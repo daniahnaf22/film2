@@ -45,11 +45,11 @@ router.put("/artis/:id", updateArtisById);
 router.delete("/artis/:id", deleteArtisById);
 
 // Rumah Produksi Routes
-router.get("/rumah-produksi", getAllRumahProduksi);
-router.post("/rumah-produksi", createRumahProduksi);
-router.get("/rumah-produksi/:id", getRumahProduksiById);
+router.get("/rumahproduksi", getAllRumahProduksi);
+router.post("/rumahproduksi", createRumahProduksi);
+router.get("/rumahproduksi/:id", getRumahProduksiById);
 router.put("/rumah-produksi/:id", updateRumahProduksiById);
-router.delete("/rumah-produksi/:id", deleteRumahProduksiById);
+router.delete("/rumahproduksi/:id", deleteRumahProduksiById);
 
 // Negara Routes
 router.get("/negara", getAllNegara);

@@ -16,24 +16,24 @@ const Film = db.define("Film", {
   },
   judulFilm: DataTypes.STRING,
   deskFilm: DataTypes.TEXT,
-  artis: DataTypes.INTEGER,
-  rumahProduksi: DataTypes.INTEGER,
+  artisId: DataTypes.INTEGER,
+  rumahProduksiId: DataTypes.INTEGER,
   tahun: DataTypes.INTEGER,
-  negara: DataTypes.INTEGER,
+  negaraId: DataTypes.INTEGER,
   cover: DataTypes.STRING,
   fileFilm: DataTypes.STRING,
 });
 
 Film.belongsTo(RumahProduksi, {
-  foreignKey: "rumahProduksi",
+  foreignKey: "rumahProduksiId",
 });
 
 Film.belongsTo(Artis, {
-  foreignKey: "artis",
+  foreignKey: "artisId",
 });
 
 Film.belongsTo(Negara, {
-  foreignKey: "negara",
+  foreignKey: "negaraId",
 });
 
 export default Film;

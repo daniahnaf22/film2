@@ -19,8 +19,7 @@ export async function createNegara(req, res) {
     elementData: req.body.elementData,
     namaNegara: req.body.namaNegara,
   };
-
-  // Validasi nilai namaNegara tidak kosong
+  
   if (!body.namaNegara) {
     return res.status(400).json({ message: "Nama negara harus diisi" });
   }

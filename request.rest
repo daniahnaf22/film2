@@ -1,0 +1,123 @@
+GET http://localhost:3000/negara
+
+###
+GET http://localhost:3000/negara/1
+
+###
+POST http://localhost:3000/negara
+Content-Type: application/json
+
+{
+    "namaNegara": "Japan"
+}
+
+###
+PUT http://localhost:3000/negara/1
+Content-Type: application/json
+
+{
+    "namaNegara": "Konoha"
+}
+
+###
+DELETE  http://localhost:3000/negara/2
+
+//Rumah Produksi
+###
+GET http://localhost:3000/rumahproduksi
+
+###
+GET http://localhost:3000/rumahproduksi/1
+
+###
+POST http://localhost:3000/rumahproduksi
+Content-Type: application/json
+
+{
+    "namaRumahProduksi": "DC",
+    "tahunBerdiri": 2000
+}
+
+###
+PUT http://localhost:3000/rumahproduksi/1
+Content-Type: application/json
+
+{
+    "namaRumahProduksi": "Marvel",
+    "tahunBerdiri": 2000
+}
+
+###
+DELETE  http://localhost:3000/rumahProduksi/2
+
+
+//Artis
+###
+GET http://localhost:3000/artis
+
+###
+GET http://localhost:3000/artis/1
+
+###
+POST http://localhost:3000/artis
+Content-Type: application/json
+
+{
+    "namaArtis": "Tamasho",
+    "tahunLahir": 2000,
+    "kewarganegaraan" : 3
+}
+
+###
+PUT http://localhost:3000/artis/1
+Content-Type: application/json
+
+{
+    "namaArtis": "Naruto",
+    "tahunLahir": 2000,
+    "kewarganegaraan" : "Konohan"
+}
+
+###
+DELETE  http://localhost:3000/artis/2
+
+//Film
+###
+GET http://localhost:3000/film
+
+###
+GET http://localhost:3000/film/1
+
+###
+POST http://localhost:3000/film
+Content-Type: application/json
+
+{
+    "judulFilm": "Pacific Rim",
+    "deskFilm": "Perang robot melawan kaiju",
+    "artisId": 1,
+    "rumahProduksiId": 1,
+    "tahun": 2000,
+    "negaraId": 1,
+    "cover": "oke.jpg",
+    "fileFilm": "nice.mp4"
+}
+
+
+###
+PUT http://localhost:3000/film/1
+Content-Type: application/json
+
+{
+    "judulFilm": "sasukae",
+    "deskFilm": "Ok",
+    "artisId": 1,
+    "rumahProduksiId": 1,
+    "tahun": 2000,
+    "negaraId": 1,
+    "cover": "Konohan",
+    "fileFilm": "Konohan"
+}
+
+###
+DELETE  http://localhost:3000/film/3

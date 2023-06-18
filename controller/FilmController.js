@@ -18,10 +18,10 @@ export async function createFilm(req, res) {
   const {
     judulFilm,
     deskFilm,
-    artis,
-    rumahProduksi,
+    artisId,
+    rumahProduksiId,
     tahun,
-    negara,
+    negaraId,
     cover,
     fileFilm,
   } = req.body;
@@ -30,10 +30,10 @@ export async function createFilm(req, res) {
     const film = await Film.create({
       judulFilm,
       deskFilm,
-      artis,
-      rumahProduksi,
+      artisId,
+      rumahProduksiId,
       tahun,
-      negara,
+      negaraId,
       cover,
       fileFilm,
     });
@@ -43,40 +43,6 @@ export async function createFilm(req, res) {
     res
       .status(500)
       .json({ message: "Terjadi kesalahan saat menambahkan film baru" });
-  }
-}
-
-// Mendapatkan detail film berdasarkan ID
-export async function getFilmById(req, res) {
-  const { id } = req.params;
-
-  try {
-    const film = await Film.findByPk(id);
-    if (!film) {
-      return res.status(404).json({ message: "Film tidak ditemukan" });
-    }
-    res.json(film);
-  } catch (error) {
-    console.error(error);
-    res
-      .status(500)
-      .json({ message: "Terjadi kesalahan saat mengambil data film" });
-  }
-}
-
-// Menghapus film berdasarkan ID
-export async function deleteFilmById(req, res) {
-  const { id } = req.params;
-
-  try {
-    const deletedFilm = await Film.destroy({ where: { id } });
-    if (!deletedFilm) {
-      return res.status(404).json({ message: "Film tidak ditemukan" });
-    }
-    res.json({ message: "Film berhasil dihapus" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Terjadi kesalahan saat menghapus film" });
   }
 }
 
@@ -117,5 +83,39 @@ export async function updateFilmById(req, res) {
     res
       .status(500)
       .json({ message: "Terjadi kesalahan saat memperbarui data film" });
+  }
+}
+
+// Mendapatkan detail film berdasarkan ID
+export async function getFilmById(req, res) {
+  const { id } = req.params;
+
+  try {
+    const film = await Film.findByPk(id);
+    if (!film) {
+      return res.status(404).json({ message: "Film tidak ditemukan" });
+    }
+    res.json(film);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ message: "Terjadi kesalahan saat mengambil data film" });
+  }
+}
+
+// Menghapus film berdasarkan ID
+export async function deleteFilmById(req, res) {
+  const { id } = req.params;
+
+  try {
+    const deletedFilm = await Film.destroy({ where: { id } });
+    if (!deletedFilm) {
+      return res.status(404).json({ message: "Film tidak ditemukan" });
+    }
+    res.json({ message: "Film berhasil dihapus" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Terjadi kesalahan saat menghapus film" });
   }
 }

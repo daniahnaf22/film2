@@ -1,5 +1,6 @@
 import { Sequelize } from "sequelize";
 import db from "../database.js";
+import Negara from "./Negara.js";
 
 const { DataTypes } = Sequelize;
 
@@ -12,7 +13,11 @@ const Artis = db.define("Artis", {
   },
   namaArtis: DataTypes.STRING,
   tahunLahir: DataTypes.INTEGER,
-  kewarganegaraan: DataTypes.STRING,
+  kewarganegaraan: DataTypes.INTEGER,
 });
+
+Artis.belongsTo(Negara, {
+  foreignKey: "kewarganegaraan",
+})
 
 export default Artis;
